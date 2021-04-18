@@ -13,6 +13,8 @@ const Dropdown = function () {
         let dropdownBtn = container.querySelector(".dropdown-btn"),
             dropdownList = container.querySelector(".dropdown-list"),
             dataPosition = dropdownList.getAttribute("data-position"),
+            dataTarget = dropdownBtn.getAttribute("data-target"),
+            id = dropdownList.id,
             dataHeight = dropdownList.getAttribute("data-height");
         if (dataPosition == "" || dataPosition == null) { dataPosition = "bottom" }
         if (dataHeight == "" || dataHeight == null) { dataHeight = "" }
@@ -22,9 +24,10 @@ const Dropdown = function () {
             dropdownBtn,
             dropdownList,
             dataPosition,
-            dataHeight
+            dataHeight,
+            dataTarget,
+            id
         };
-
         eventFunc(selector);
     });
 
@@ -36,9 +39,11 @@ const Dropdown = function () {
                     resetFunc(selector);
                 }
                 else {
-                    resetFunc(selector);
-                    selector.dropdownList.classList.add("show", selector.dataPosition);
-                    selector.dropdownList.style.height = `${selector.dataHeight}px`;
+                    if (selector.id == selector.dataTarget) {
+                        resetFunc(selector);
+                        selector.dropdownList.classList.add("show", selector.dataPosition);
+                        selector.dropdownList.style.height = `${selector.dataHeight}px`;
+                    }
                 }
             });
         });
