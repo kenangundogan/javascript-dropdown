@@ -1,5 +1,6 @@
 .dropdown-container{
     position: relative;
+    display: inline-block;
     .dropdown-btn{
         cursor: pointer;
         padding: 15px;
@@ -20,27 +21,11 @@
         }
         .dropdown-item{
             a{
-                display: block; padding: 7.5px 15px;
+                display: block; 
+                padding: 7.5px 15px;
                 font-size: 14px;
                 font-family: $font-family-sans-serif;
             }
-        }
-        &.top{
-            bottom: 100%;
-        }
-        &.bottom{
-            top: 100%;
-        }
-        &.left{
-            top: 0; left: 0;
-            transform: translate(-100%, 0);
-        }
-        &.right{
-            top: 0; right: 0;
-            transform: translate(100%, 0);
-        }
-        &.scroll{
-            overflow: auto;
         }
     }
 }
