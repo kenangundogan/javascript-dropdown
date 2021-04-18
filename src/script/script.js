@@ -41,6 +41,23 @@ const Dropdown = function () {
                 else {
                     if (selector.id == selector.dataTarget) {
                         resetFunc(selector);
+                        if (selector.dataPosition == "top") {
+                            selector.dropdownList.style.transform = `translate(0px, -${selector.dropdownBtn.offsetHeight}px)`;
+                            selector.dropdownList.style.inset = "auto auto 0px 0px";
+                        }
+                        else if (selector.dataPosition == "bottom") {
+                            selector.dropdownList.style.transform = `translate(0px, ${selector.dropdownBtn.offsetHeight}px)`;
+                            selector.dropdownList.style.inset = "0px auto auto 0px";
+                        }
+                        else if (selector.dataPosition == "right") {
+                            selector.dropdownList.style.transform = `translate(${selector.dropdownBtn.offsetWidth}px, 0px)`;
+                            selector.dropdownList.style.inset = "0px auto auto 0px";
+                        }
+                        else if (selector.dataPosition == "left") {
+                            selector.dropdownList.style.transform = `translate(-${selector.dropdownBtn.offsetWidth}px, 0px)`;
+                            selector.dropdownList.style.inset = "0px 0px auto auto";
+                        }
+
                         selector.dropdownList.classList.add("show", selector.dataPosition);
                         selector.dropdownList.style.height = `${selector.dataHeight}px`;
                     }
