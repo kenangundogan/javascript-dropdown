@@ -11,7 +11,7 @@
     }
     .dropdown-list{
         position: absolute; z-index: 1000;
-        padding: 7.5px 0;
+        overflow: auto; padding: 7.5px 0;
         border: solid 1px #dedede; border-radius: 5px;
         white-space: nowrap;
         background-color: #fff;
@@ -32,13 +32,11 @@
             top: 100%;
         }
         &.left{
-            top: 0;
-            left: 0;
+            top: 0; left: 0;
             transform: translate(-100%, 0);
         }
         &.right{
-            top: 0;
-            right: 0;
+            top: 0; right: 0;
             transform: translate(100%, 0);
         }
         &.scroll{
