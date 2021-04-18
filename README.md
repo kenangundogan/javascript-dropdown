@@ -4,7 +4,7 @@ Javascript dropdown - tiny and simple.
 ## Options
 Option | Type | Default | Description | Example
 ------ | ---- | ------- | ----------- | -----------
-id | string |  | id DOM element | [Example](https://kenangundogan.github.io/javascript-dropdown)
+id | string |  | DOM element | [Example](https://kenangundogan.github.io/javascript-dropdown)
 data-position | string | bottom | top,right,bottom,left | [Example](https://kenangundogan.github.io/javascript-dropdown)
 data-height | int |  | scroll height | [Example](https://kenangundogan.github.io/javascript-dropdown)
 
