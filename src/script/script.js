@@ -4,45 +4,65 @@
  * Released under the MIT License
  */
 
-
 const Dropdown = function () {
+
     const dropdownContainers = document.querySelectorAll(".dropdown-container");
 
     dropdownContainers.forEach(container => {
+
         let dropdownBtn = container.querySelector(".dropdown-btn"),
             dropdownList = container.querySelector(".dropdown-list"),
-            dataPosition = dropdownList.getAttribute("data-position");
+            dataPosition = dropdownList.getAttribute("data-position"),
+            dataHeight = dropdownList.getAttribute("data-height");
         if (dataPosition == "" || dataPosition == null) { dataPosition = "bottom" }
+        if (dataHeight == "" || dataHeight == null) { dataHeight = "" }
+
         const selector = {
             dropdownContainers,
             dropdownBtn,
             dropdownList,
-            dataPosition
+            dataPosition,
+            dataHeight
         };
-        btnEventFunc(selector);
+
+        eventFunc(selector);
     });
 
-    function btnEventFunc(selector) {
+    function eventFunc(selector) {
+
         selector.dropdownBtn.addEventListener("click", () => {
-            resetItemFunc(selector);
-            selector.dropdownList.classList.add("show", selector.dataPosition);
+            selector.dropdownList.classList.forEach(show => {
+                if (show == "show") {
+                    resetFunc(selector);
+                }
+                else {
+                    resetFunc(selector);
+                    selector.dropdownList.classList.add("show", selector.dataPosition);
+                    selector.dropdownList.style.height = `${selector.dataHeight}px`;
+                }
+            });
         });
+
         document.addEventListener('keydown', (event) => {
             if (event.key === "Escape" || event.key === "Esc") {
-                resetItemFunc(selector);
+                resetFunc(selector);
             }
         });
+
     }
 
+    function resetFunc(selector) {
 
-    function resetItemFunc(selector) {
         selector.dropdownContainers.forEach(container => {
             let containerList = container.querySelector(".dropdown-list");
-            let dataPosition = container.getAttribute("data-position");
+            let dataPosition = containerList.getAttribute("data-position");
             containerList.classList.remove("show", dataPosition);
+            containerList.style.height = "";
         });
+
     }
 }
+
 document.addEventListener('DOMContentLoaded', (event) => {
     Dropdown();
 })
