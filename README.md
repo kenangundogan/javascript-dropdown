@@ -7,6 +7,8 @@ Javascript dropdown - tiny and simple.
 [![CSS gzip size](https://img.badgesize.io/kenangundogan/javascript-dropdown/main/dist/style/style.css?compression=gzip&label=CSS%20gzip%20size)](https://github.com/kenangundogan/javascript-dropdown/blob/main/dist/style/style.css)
 [![CSS Brotli size](https://img.badgesize.io/kenangundogan/javascript-dropdown/main/dist/style/style.css?compression=brotli&label=CSS%20Brotli%20size)](https://github.com/kenangundogan/javascript-dropdown/blob/main/dist/style/style.css)
 
+![Javascript Accordion](https://raw.githubusercontent.com/kenangundogan/javascript-dropdown/main/asset/javascript-dropdown-cover.png)
+
 ## Options
 Option | Type | Default | Description | Example
 ------ | ---- | ------- | ----------- | -----------
